@@ -13,4 +13,5 @@ import javax.inject.Qualifier;
 @Qualifier
 @Target({ TYPE, FIELD, METHOD })
 @Retention(RetentionPolicy.RUNTIME)
-public @interface EightDigits {}
+public @interface RandomNumber {
+}

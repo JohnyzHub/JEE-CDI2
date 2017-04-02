@@ -16,7 +16,7 @@ import javax.inject.Qualifier;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface NumberFormat {
 
-	DigitFormat value();
+	DigitFormat value() default DigitFormat.EIGHT;
 
 	@Nonbinding
 	String description() default "";

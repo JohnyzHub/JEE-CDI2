@@ -1,5 +1,5 @@
 package org.myjee.cdi.practice.BookStore.numbergenerate;
 
-public interface NumberGenerator {
-	String generateNumber();
+public abstract class NumberGenerator {
+	public abstract String generateNumber();
 }

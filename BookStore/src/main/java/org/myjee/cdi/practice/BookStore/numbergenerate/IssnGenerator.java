@@ -1,22 +1,30 @@
 package org.myjee.cdi.practice.BookStore.numbergenerate;
 
-import java.util.Random;
 import java.util.logging.Logger;
 
 import javax.inject.Inject;
 
 import org.myjee.cdi.practice.BookStore.interceptor.Loggable;
+import org.myjee.cdi.practice.BookStore.qualifier.NumberFormat;
+import org.myjee.cdi.practice.BookStore.qualifier.RandomNumber;
 
-public class IssnGenerator implements NumberGenerator {
+public class IssnGenerator extends NumberGenerator {
 
 	@Inject
 	private Logger logger;
 
+	@Inject
+	@NumberFormat
+	private String prefix8Digits;
+
+	@Inject
+	@RandomNumber
+	private double randomNumber;
+
 	@Loggable
 	public String generateNumber() {
-		String issn = "8-" + Math.abs(new Random().nextInt());
+		String issn = prefix8Digits + randomNumber;
 		logger.info("Generated ISSN-" + issn);
 		return issn;
 	}
-
 }
