@@ -3,11 +3,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>org.myjee.cdi.practice.plainpojo</groupId>
-	<artifactId>plainpjo-author</artifactId>
+	<artifactId>TimeTracker</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>plainpjo-author</name>
+	<name>plainpjo-TimeTracker</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>

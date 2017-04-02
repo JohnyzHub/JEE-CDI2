@@ -9,8 +9,6 @@ import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import javax.inject.Inject;
 
-import org.myjee.cdi.practice.plainpojo.plainpjo_author.Author;
-
 /**
  * @author johnybasha
  *
@@ -21,9 +19,13 @@ public class Book {
 	private Logger logger;
 
 	private String title;
+
 	private Float price;
+
 	private String description;
+
 	private String number;
+	@Inject
 	private Author author;
 
 	public String getTitle() {
@@ -62,7 +64,6 @@ public class Book {
 		return author;
 	}
 
-	@Inject
 	public void setAuthor(Author author) {
 		logger.info("setAuthor Called");
 		this.author = author;

@@ -7,8 +7,7 @@ import javax.enterprise.inject.Produces;
 import javax.enterprise.inject.spi.InjectionPoint;
 
 import org.myjee.cdi.practice.BookStore.interceptor.Loggable;
-import org.myjee.cdi.practice.plainpojo.plainpjo_author.Author;
-import org.myjee.cdi.practice.plainpojo.plainpjo_author.InfiniteThread;
+import org.myjee.cdi.practice.plainpojo.time.TimeTracker;
 
 @Loggable
 public class InjectionProducer {
@@ -19,16 +18,11 @@ public class InjectionProducer {
 	}
 
 	@Produces
-	public Author produceAuthor() {
-		return new Author();
+	public TimeTracker produceTimeTracker() {
+		return new TimeTracker();
 	}
 
-	@Produces
-	public InfiniteThread produceInfiniteThread() {
-		return new InfiniteThread();
-	}
-
-	public void disposeInfiniteThread(@Disposes InfiniteThread infiniteThread) {
-		infiniteThread.stopThread();
+	public void disposeInfiniteThread(@Disposes TimeTracker timeTracker) {
+		timeTracker.stopThread();
 	}
 }

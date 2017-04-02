@@ -19,16 +19,8 @@
 		<version.junit>4.11</version.junit>
 
 		<!-- Maven Plugins -->
-		<version.maven.jar.plugin>2.4</version.maven.jar.plugin>
-		<version.maven.war.plugin>2.4</version.maven.war.plugin>
-		<version.maven.processor.plugin>2.2.4</version.maven.processor.plugin>
 		<version.maven.compiler.plugin>3.6.1</version.maven.compiler.plugin>
-		<version.maven.dependency.plugin>2.8</version.maven.dependency.plugin>
-		<version.maven.help.plugin>2.2</version.maven.help.plugin>
 		<version.maven.exec.plugin>1.6.0</version.maven.exec.plugin>
-		<version.maven.surefire.plugin>2.16</version.maven.surefire.plugin>
-		<version.maven.failsafe.plugin>2.16</version.maven.failsafe.plugin>
-		<version.maven.javadoc.plugin>2.9.1</version.maven.javadoc.plugin>
 
 		<!-- Project -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -36,10 +28,8 @@
 	</properties>
 
 	<dependencies>
-		<!-- dependency> <groupId>javax</groupId> <artifactId>javaee-api</artifactId> 
-			<version>${version.javaee}</version> <scope>provided</scope> </dependency -->
 
-		<!-- CDI -->
+		<!-- CDI & WELD -->
 		<dependency>
 			<groupId>org.jboss.weld.se</groupId>
 			<artifactId>weld-se-core</artifactId>
@@ -49,7 +39,7 @@
 		<!-- Author POJO -->
 		<dependency>
 			<groupId>org.myjee.cdi.practice.plainpojo</groupId>
-			<artifactId>plainpjo-author</artifactId>
+			<artifactId>TimeTracker</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 

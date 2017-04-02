@@ -1,4 +1,4 @@
-package org.myjee.cdi.practice.plainpojo.plainpjo_author;
+package org.myjee.cdi.practice.BookStore.entity;
 
 public class Author {
 
