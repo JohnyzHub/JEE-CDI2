@@ -25,8 +25,10 @@ public class Book {
 	private String description;
 
 	private String number;
-	@Inject
+
 	private Author author;
+
+	private Category category;
 
 	public String getTitle() {
 		return title;
@@ -65,8 +67,15 @@ public class Book {
 	}
 
 	public void setAuthor(Author author) {
-		logger.info("setAuthor Called");
 		this.author = author;
+	}
+
+	public Category getCategory() {
+		return category;
+	}
+
+	public void setCategory(Category category) {
+		this.category = category;
 	}
 
 	@Override

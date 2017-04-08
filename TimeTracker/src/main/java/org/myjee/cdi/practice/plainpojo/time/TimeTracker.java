@@ -9,6 +9,8 @@ public class TimeTracker {
 		Runnable thread = () -> {
 			while (!Thread.interrupted()) {
 			}
+			System.out.println("Stopped: " + thread1.getName() + "::" + System.currentTimeMillis());
+			System.out.println("Total Time taken (in milli-Seconds) : " + (System.currentTimeMillis() - beginTime));
 		};
 		thread1 = new Thread(thread, "TimeTracker");
 		beginTime = System.currentTimeMillis();
@@ -18,7 +20,5 @@ public class TimeTracker {
 
 	public void stopThread() {
 		thread1.interrupt();
-		System.out.println("Stopped: " + thread1.getName() + "::" + System.currentTimeMillis());
-		System.out.println("Total Time taken (in milli-Seconds) : " + (System.currentTimeMillis() - beginTime));
 	}
 }

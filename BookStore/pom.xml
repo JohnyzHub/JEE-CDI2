@@ -13,9 +13,7 @@
 	<properties>
 		<version.java>1.8</version.java>
 		<!-- Java EE -->
-		<version.javaee>7.0</version.javaee>
 		<version.weld>3.0.0.CR2</version.weld>
-
 		<version.junit>4.11</version.junit>
 
 		<!-- Maven Plugins -->
