@@ -11,7 +11,6 @@ import org.myjee.cdi.practice.BookStore.qualifier.NumberFormat;
 import org.myjee.cdi.practice.BookStore.qualifier.NumberFormat.DigitFormat;
 import org.myjee.cdi.practice.plainpojo.time.TimeTracker;
 
-@Loggable
 public class BookService {
 
 	@Inject
@@ -27,6 +26,7 @@ public class BookService {
 	@Inject
 	private TimeTracker thread;
 
+	@Loggable
 	public void createBook(String title, String authorName, Float price, String description) {
 		thread.startThread();
 		book.setCategory(Category.JEE);

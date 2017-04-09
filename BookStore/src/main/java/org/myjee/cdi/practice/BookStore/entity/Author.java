@@ -1,5 +1,8 @@
 package org.myjee.cdi.practice.BookStore.entity;
 
+import org.myjee.cdi.practice.BookStore.interceptor.Loggable;
+
+@Loggable
 public class Author {
 
 	private String name;

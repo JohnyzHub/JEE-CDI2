@@ -7,13 +7,11 @@ import javax.enterprise.inject.Disposes;
 import javax.enterprise.inject.Produces;
 import javax.enterprise.inject.spi.InjectionPoint;
 
-import org.myjee.cdi.practice.BookStore.interceptor.Loggable;
 import org.myjee.cdi.practice.BookStore.qualifier.NumberFormat;
 import org.myjee.cdi.practice.BookStore.qualifier.NumberFormat.DigitFormat;
 import org.myjee.cdi.practice.BookStore.qualifier.RandomNumber;
 import org.myjee.cdi.practice.plainpojo.time.TimeTracker;
 
-@Loggable
 public class InjectionProducer {
 
 	@Produces

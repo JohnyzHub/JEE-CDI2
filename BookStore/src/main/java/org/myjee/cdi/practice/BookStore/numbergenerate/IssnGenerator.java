@@ -8,6 +8,7 @@ import org.myjee.cdi.practice.BookStore.interceptor.Loggable;
 import org.myjee.cdi.practice.BookStore.qualifier.NumberFormat;
 import org.myjee.cdi.practice.BookStore.qualifier.RandomNumber;
 
+@NumberFormat
 public class IssnGenerator extends NumberGenerator {
 
 	@Inject
