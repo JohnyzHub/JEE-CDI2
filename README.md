@@ -21,7 +21,9 @@ JEE 7 CDI 2.x Practice Project.
 9. Produces – Produces a bean for non-bean class. 
  Produces a runtime implementation of eligible bean.
 
-          InjectionPoint* - Provides the metadata about the injection point to the object being 				   injected into.
+          InjectionPoint* - Provides the metadata about 
+							the injection point to the object being
+							injected into.
 10. Disposes – Disposes the @Produces bean.
 
 
