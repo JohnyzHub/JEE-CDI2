@@ -1,0 +1,8 @@
+Notes:
+Rest easy dependency should be with scope provided to avoid conflicts with already installed jars resteasy from wildfly.
+perform: mvn clean install
+Deploy: to wildfly
+End Points: 
+localhost:<port>/RestWithProduce/rest
+localhost:<port>/RestWithProduce/rest/book/FICTION
+localhost:<port>/RestWithProduce/rest/book/SUSPENSE
