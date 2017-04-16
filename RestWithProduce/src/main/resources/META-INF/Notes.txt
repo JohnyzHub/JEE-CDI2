@@ -3,6 +3,7 @@ Rest easy dependency should be with scope provided to avoid conflicts with alrea
 perform: mvn clean install
 Deploy: to wildfly
 End Points: 
-localhost:<port>/RestWithProduce/rest
+localhost:<port>/RestWithProduce
+localhost:<port>/RestWithProduce/rest/book
 localhost:<port>/RestWithProduce/rest/book/FICTION
 localhost:<port>/RestWithProduce/rest/book/SUSPENSE
