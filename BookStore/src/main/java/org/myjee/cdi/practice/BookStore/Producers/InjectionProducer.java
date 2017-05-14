@@ -32,7 +32,7 @@ public class InjectionProducer {
 
 	@Produces
 	@RandomNumber
-	public double random() {
+	public int random() {
 		return Math.abs(new Random().nextInt());
 	}
 

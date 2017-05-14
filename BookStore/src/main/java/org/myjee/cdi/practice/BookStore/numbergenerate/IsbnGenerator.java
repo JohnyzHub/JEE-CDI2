@@ -25,7 +25,7 @@ public class IsbnGenerator extends NumberGenerator {
 
 	@Inject
 	@RandomNumber
-	private double randomNumber;
+	private int randomNumber;
 
 	@Loggable
 	public String generateNumber() {

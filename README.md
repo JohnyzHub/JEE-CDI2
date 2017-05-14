@@ -61,10 +61,18 @@ AroundTimeout
 
 
 Events:   
-1. Observes - 
-2. Event* - 
-3. WithAnnotations – Applies only to the event parameters.
-4. Priority – Prioritizes the order of event notification methods order.
+
+1. Event* - Event object
+2. fire - fires the event synchronously.
+3. fireAsync - Fires the event asynchronously.
+4. Observes - Observes the event.
+5. ObservesAsync - Observes the event asynchronously.
+6. WithAnnotations – Applies only to the event parameters.
+7. Priority – Prioritizes the order of event notification.
+				Priority applies only to events fires synchronously.
+				
+				fire <-> observes
+				fireAsync <-> observesAsync
 
 Decorators:
 1. Decorator

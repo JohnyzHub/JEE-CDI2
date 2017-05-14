@@ -9,6 +9,8 @@ import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import javax.inject.Inject;
 
+import org.myjee.cdi.practice.BookStore.booktype.BookFormat;
+
 /**
  * @author johnybasha
  *
@@ -20,7 +22,9 @@ public class Book {
 
 	private String title;
 
-	private Float price;
+	private BookFormat bookFormat;
+
+	private BookPrice bookPrice;
 
 	private String description;
 
@@ -38,12 +42,12 @@ public class Book {
 		this.title = title;
 	}
 
-	public Float getPrice() {
-		return price;
+	public BookPrice getPrice() {
+		return bookPrice;
 	}
 
-	public void setPrice(Float price) {
-		this.price = price;
+	public void setPrice(BookPrice bookPrice) {
+		this.bookPrice = bookPrice;
 	}
 
 	public String getDescription() {
@@ -76,6 +80,14 @@ public class Book {
 
 	public void setCategory(Category category) {
 		this.category = category;
+	}
+
+	public BookFormat getBookFormat() {
+		return bookFormat;
+	}
+
+	public void setBookFormat(BookFormat bookFormat) {
+		this.bookFormat = bookFormat;
 	}
 
 	@Override
@@ -117,8 +129,8 @@ public class Book {
 
 	@Override
 	public String toString() {
-		return "Book [title=" + title + ", price=" + price + ", description=" + description + ", number=" + number + ","
-				+ author + "]";
+		return "Book [title=" + title + ", format = " + bookFormat.getType() + ", price=" + bookPrice.getPrice()
+				+ ",\n description=" + description + ", number=" + number + "," + author + "]";
 	}
 
 	@PostConstruct

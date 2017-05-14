@@ -10,12 +10,12 @@ import java.lang.annotation.Target;
 
 import javax.inject.Qualifier;
 
-import org.myjee.cdi.practice.BookStore.type.BookStoreType.StoreType;
+import org.myjee.cdi.practice.BookStore.booktype.BookFormat.BookType;
 
 @Qualifier
 @Retention(RUNTIME)
 @Target({ TYPE, FIELD, METHOD })
-public @interface StoreTypeQlfr {
-	StoreType storeType() default StoreType.EBOOK;
+public @interface BookPriceQlfr {
+	BookType value();
 
 }

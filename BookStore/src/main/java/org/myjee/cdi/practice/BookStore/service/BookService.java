@@ -1,12 +1,21 @@
 package org.myjee.cdi.practice.BookStore.service;
 
+import java.util.logging.Logger;
+
+import javax.enterprise.event.Event;
 import javax.inject.Inject;
 
+import org.myjee.cdi.practice.BookStore.Producers.DynamicProducer;
+import org.myjee.cdi.practice.BookStore.booktype.BookFormat;
+import org.myjee.cdi.practice.BookStore.booktype.BookFormat.BookType;
 import org.myjee.cdi.practice.BookStore.entity.Author;
 import org.myjee.cdi.practice.BookStore.entity.Book;
+import org.myjee.cdi.practice.BookStore.entity.BookPrice;
 import org.myjee.cdi.practice.BookStore.entity.Category;
 import org.myjee.cdi.practice.BookStore.interceptor.Loggable;
 import org.myjee.cdi.practice.BookStore.numbergenerate.NumberGenerator;
+import org.myjee.cdi.practice.BookStore.qualifier.BookFormatQlfr;
+import org.myjee.cdi.practice.BookStore.qualifier.BookPriceQlfr;
 import org.myjee.cdi.practice.BookStore.qualifier.NumberFormat;
 import org.myjee.cdi.practice.BookStore.qualifier.NumberFormat.DigitFormat;
 import org.myjee.cdi.practice.plainpojo.time.TimeTracker;
@@ -14,10 +23,15 @@ import org.myjee.cdi.practice.plainpojo.time.TimeTracker;
 public class BookService {
 
 	@Inject
-	private Author author;
+	private DynamicProducer dynamicProducer;
 
 	@Inject
-	private Book book;
+	@BookFormatQlfr(bookType = BookType.PAPERBACK)
+	private BookFormat bookFormat;
+
+	@Inject
+	@BookPriceQlfr(BookType.PAPERBACK)
+	private BookPrice bookPrice;
 
 	@NumberFormat(value = DigitFormat.THIRTEEN, description = "Thirteen Digits")
 	@Inject
@@ -26,14 +40,27 @@ public class BookService {
 	@Inject
 	private TimeTracker thread;
 
+	@Inject
+	private Logger logger;
+
+	@Inject
+	private Event<Book> eventNotifier;
+
 	@Loggable
 	public void createBook(String title, String authorName, Float price, String description) {
 		thread.startThread();
+		Book book = new Book();
+		book.setBookFormat(bookFormat);
 		book.setCategory(Category.JEE);
+		Author author = dynamicProducer.getAuthor(bookFormat.getType());
 		book.setAuthor(author);
 		book.setTitle(title);
-		book.setPrice(price);
+		book.setPrice(bookPrice);
 		book.setDescription(description);
 		book.setNumber(numberGenerator.generateNumber());
+		logger.info("Sync Event fired");
+		eventNotifier.fire(book);
+		logger.info("ASync Event fired");
+		eventNotifier.fireAsync(book);
 	}
 }
