@@ -10,7 +10,7 @@ public class BookOperator {
 
 		Weld weld = new Weld();
 		WeldContainer weldContainer = weld.initialize();
-		BookService bookService = weldContainer.instance().select(BookService.class).get();
+		BookService bookService = weldContainer.select(BookService.class).get();
 		bookService.createBook("Beginning Java EE 7", "Antonio", 45.57f, "Excellent book");
 		weld.shutdown();
 	}

@@ -46,9 +46,14 @@ public class BookService {
 	@Inject
 	private Event<Book> eventNotifier;
 
+	/**
+	 * @Inject private StoreDetails storeDetails;
+	 */
+
 	@Loggable
 	public void createBook(String title, String authorName, Float price, String description) {
 		thread.startThread();
+		createBookThroughInjectionAndExtention();
 		Book book = new Book();
 		book.setBookFormat(bookFormat);
 		book.setCategory(Category.JEE);
@@ -58,9 +63,23 @@ public class BookService {
 		book.setPrice(bookPrice);
 		book.setDescription(description);
 		book.setNumber(numberGenerator.generateNumber());
-		logger.info("Sync Event fired");
+		logger.info("Sync Event fired: Book");
 		eventNotifier.fire(book);
-		logger.info("ASync Event fired");
+		logger.info("Async Event fired: Book");
 		eventNotifier.fireAsync(book);
+
+	}
+
+	/*
+	 * This method creates Book with title and description read from
+	 * PropertyLoaderExtention. This is not working yet.
+	 */
+
+	private void createBookThroughInjectionAndExtention() {
+		/**
+		 * System.out.println("Store Details: name " + storeDetails.getName() +
+		 * " number " + storeDetails.getNumber());
+		 */
+
 	}
 }

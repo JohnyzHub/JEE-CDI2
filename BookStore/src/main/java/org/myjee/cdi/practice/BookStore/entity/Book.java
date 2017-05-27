@@ -15,17 +15,20 @@ import org.myjee.cdi.practice.BookStore.booktype.BookFormat;
  * @author johnybasha
  *
  */
+// @PropertyFile("BookProperties.txt")
 public class Book {
 
 	@Inject
 	private Logger logger;
 
+	// @Property("title")
 	private String title;
 
 	private BookFormat bookFormat;
 
 	private BookPrice bookPrice;
 
+	// @Property("description")
 	private String description;
 
 	private String number;
