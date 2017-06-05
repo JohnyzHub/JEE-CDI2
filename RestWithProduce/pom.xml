@@ -54,40 +54,54 @@
         </plugins>
     </build>
 
-    <dependencyManagement>
+    <dependencies>
+
+        <!-- https://mvnrepository.com/artifact/javax/javaee-api -->
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-api</artifactId>
+            <version>7.0</version>
+            <scope>provided</scope>
+        </dependency>
+
+
+        <!-- https://mvnrepository.com/artifact/org.jboss.weld.se/weld-se -->
+        <dependency>
+            <groupId>org.jboss.weld.se</groupId>
+            <artifactId>weld-se</artifactId>
+            <version>2.4.3.Final</version>
+            <scope>provided</scope>
+        </dependency>
+
+
+        <!-- https://mvnrepository.com/artifact/org.jboss.resteasy/resteasy-jaxrs -->
+        <dependency>
+            <groupId>org.jboss.resteasy</groupId>
+            <artifactId>resteasy-jaxrs</artifactId>
+            <version>3.1.2.Final</version>
+            <scope>provided</scope>
+        </dependency>
+
+
+        <!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.1.0</version>
+        </dependency>
+
+    </dependencies>
+
+     <dependencyManagement>
         <dependencies>
             <dependency>
                 <groupId>org.wildfly.swarm</groupId>
-                <artifactId>bom</artifactId>
+                <artifactId>bom-all</artifactId>
                 <version>${version.wildfly.swarm}</version>
                 <scope>import</scope>
                 <type>pom</type>
             </dependency>
 
-            <!-- https://mvnrepository.com/artifact/org.jboss.weld.se/weld-se -->
-            <dependency>
-                <groupId>org.jboss.weld.se</groupId>
-                <artifactId>weld-se</artifactId>
-                <version>2.4.3.Final</version>
-                <scope>provided</scope>
-            </dependency>
-
-
-            <!-- https://mvnrepository.com/artifact/org.jboss.resteasy/resteasy-jaxrs -->
-            <dependency>
-                <groupId>org.jboss.resteasy</groupId>
-                <artifactId>resteasy-jaxrs</artifactId>
-                <version>3.1.2.Final</version>
-                <scope>provided</scope>
-            </dependency>
-
-
-            <!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
-            <dependency>
-                <groupId>javax.servlet</groupId>
-                <artifactId>javax.servlet-api</artifactId>
-                <version>3.1.0</version>
-            </dependency>
         </dependencies>
     </dependencyManagement>
 </project>
