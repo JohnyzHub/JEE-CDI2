@@ -1,7 +1,7 @@
 
-perform:
+Build:
     
-    mvn package
+    mvn clean package -up -q
 
 Deploy:
 
@@ -15,7 +15,7 @@ For different configuration methods refer:
 
     https://reference.wildfly-swarm.io/configuration.html 
 
-End Points:
+Rest End Points:
 
     localhost:<port>/restwithcdi 
     localhost:<port>/restwithcdi/rest/book 
