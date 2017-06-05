@@ -14,7 +14,7 @@ For different configuration methods refer:
 		https://reference.wildfly-swarm.io/configuration.html 
 
 End Points: 
-localhost:<port>/restwithcdi
-localhost:<port>/restwithcdi/rest/book
-localhost:<port>/restwithcdi/rest/book/FICTION
-localhost:<port>/restwithcdi/rest/book/SUSPENSE
+		localhost:<port>/restwithcdi 
+		localhost:<port>/restwithcdi/rest/book 
+		localhost:<port>/restwithcdi/rest/book/FICTION 
+		localhost:<port>/restwithcdi/rest/book/SUSPENSE 
