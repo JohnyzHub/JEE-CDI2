@@ -1,6 +1,9 @@
 package org.myjee.cdi.practice.rest.selector;
 
-import java.util.logging.Logger;
+import org.myjee.cdi.practice.rest.entity.Book;
+import org.myjee.cdi.practice.rest.entity.Book.BookType;
+import org.myjee.cdi.practice.rest.entity.FictionBook;
+import org.myjee.cdi.practice.rest.entity.SuspenseBook;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.inject.Instance;
@@ -8,19 +11,11 @@ import javax.enterprise.inject.Produces;
 import javax.enterprise.inject.spi.InjectionPoint;
 import javax.inject.Inject;
 
-import org.myjee.cdi.practice.rest.entity.Book;
-import org.myjee.cdi.practice.rest.entity.Book.BookType;
-import org.myjee.cdi.practice.rest.entity.FictionBook;
-import org.myjee.cdi.practice.rest.entity.SuspenseBook;
-
 @ApplicationScoped
 public class BookSelector {
 
 	@Inject
 	private Instance<Book> bookInstance;
-
-	@Inject
-	private Logger logger;
 
 	private String type = null;
 

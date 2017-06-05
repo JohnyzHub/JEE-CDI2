@@ -1,7 +1,7 @@
 package org.myjee.cdi.practice.rest;
 
-import java.util.Date;
-import java.util.logging.Logger;
+import org.myjee.cdi.practice.rest.entity.Book.BookType;
+import org.myjee.cdi.practice.rest.selector.BookSelector;
 
 import javax.inject.Inject;
 import javax.ws.rs.GET;
@@ -9,9 +9,8 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.Response;
-
-import org.myjee.cdi.practice.rest.entity.Book.BookType;
-import org.myjee.cdi.practice.rest.selector.BookSelector;
+import java.util.Date;
+import java.util.logging.Logger;
 
 @Path("/book")
 public class BookService {
