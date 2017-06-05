@@ -1,14 +1,17 @@
 Notes:
 
-perform: mvn package
+perform: 
+		mvn package
+
 Deploy: 
-java -jar target/RestWithProduce-swarm.jar -Dswarm.port.offset=100 -Dswarm.context.path=/restwithcdi
+		java -jar target/RestWithProduce-swarm.jar 
+		-Dswarm.port.offset=100 -Dswarm.context.path=/restwithcdi
 
 For system level properties refer: 
-https://wildfly-swarm.gitbooks.io/wildfly-swarm-users-guide/content/configuration_properties.html 
+		https://wildfly-swarm.gitbooks.io/wildfly-swarm-users-guide/content/configuration_properties.html 
 
 For different configuration methods refer: 
-https://reference.wildfly-swarm.io/configuration.html 
+		https://reference.wildfly-swarm.io/configuration.html 
 
 End Points: 
 localhost:<port>/restwithcdi
