@@ -44,7 +44,7 @@ Scopes:
 
 
 Interceptors: 
-	Interceptor must be enabled in beans.xml file
+	
 1. Interceptor – Cross cutting functionality
 2. Interceptors – For chaining the interceptors
 3. ExcludeClassInterceptors – Excludes class from interceptor calls.
@@ -77,3 +77,6 @@ Events:
 Decorators:
 1. Decorator
 2. Delegate
+
+
+Interceptor, Decorators must be enabled explicitly in beans.xml file

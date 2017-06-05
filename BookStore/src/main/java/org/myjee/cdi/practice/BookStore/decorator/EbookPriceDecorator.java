@@ -1,4 +1,4 @@
-package org.myjee.cdi.practice.BookStore.price.decorator;
+package org.myjee.cdi.practice.BookStore.decorator;
 
 import java.util.logging.Logger;
 

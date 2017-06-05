@@ -9,7 +9,7 @@
 	</interceptors>
 
 	<decorators>
-		<class>org.myjee.cdi.practice.BookStore.price.decorator.EbookPriceDecorator</class>
-		<class>org.myjee.cdi.practice.BookStore.price.decorator.PaperBackPriceDecorator</class>
+		<class>org.myjee.cdi.practice.BookStore.decorator.EbookPriceDecorator</class>
+		<class>org.myjee.cdi.practice.BookStore.decorator.PaperBackPriceDecorator</class>
 	</decorators>
 </beans>
