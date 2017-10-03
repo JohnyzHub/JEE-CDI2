@@ -43,15 +43,15 @@ Scopes:
 
 Interceptors: 
 	
-	1. Interceptor 			-	Cross-cutting functionality. Notice that it is a POJO class. 
+	1. Interceptor 			-	Cross-cutting functionality. Notice that it is a POJO class.
 							It has method(s) with @AroundConstruct and/or @AroundInvoke.
 							This class doesn't need special annotation.
 	2. Interceptors 		– 	For chaining the one or more interceptors
 	3. ExcludeClassInterceptors 	– 	Excludes method(s) from the interceptors declared at the class level.
 	4. InterceptorBinding 		– 	Binds the interceptor class(es) with intercepted class.
-						Notice that this needs @Interceptor annotation while binding 
+						Notice that this needs @Interceptor annotation while binding
 						interceptor POJOs(#1 in this list).
-	5. Interceptor			-	This annotation links the InterceptorBinding(#4) to the interceptor(#1)			
+	5. Interceptor			-	This annotation links the InterceptorBinding(#4) to the interceptor(#1)
 	6. Transactional 		– 	Provides transactional interception.
 	7. Priority 			– 	Prioritizes the order of interceptor methods order.
 	8. AroundConstruct 		- 	Gets invoked when the constructor is called.
