@@ -21,9 +21,7 @@ JEE 7 CDI 2.x Practice Project.
 9. Produces – Produces a bean for non-bean class. 
  Produces a runtime implementation of eligible bean.
 
-          InjectionPoint* - Provides the metadata about 
-							the injection point to the object being
-							injected into.
+          InjectionPoint* - Provides the metadata about the injection point to the object being injected into.
 10. Disposes – Disposes the @Produces bean.
 
 
@@ -45,19 +43,20 @@ Scopes:
 
 Interceptors: 
 	
-1. Interceptor – Cross cutting functionality
-2. Interceptors – For chaining the interceptors
-3. ExcludeClassInterceptors – Excludes class from interceptor calls.
-4. InterceptorBinding – Binds the interceptor class with intercepted class.
+1. *Interceptor – Cross cutting functionality.
+			Notice that Interceptor is not an annotation, it is just a class,
+				that has method(s) with @AroundConstruct and/or @AroundInvoke
+		
+2. Interceptors – For chaining the one or more interceptors
+3. ExcludeClassInterceptors – Excludes method(s) from the interceptors declared at the class level.
+4. InterceptorBinding – Binds the interceptor class(es) with intercepted class.
 5. Transactional – Provides transactional interception.
 6. Priority – Prioritizes the order of interceptor methods order.
-7. Constructor level
-AroundConstruct
-8. Method level
-AroundInvoke
-9. Timeout level – (for ejb timers)
-AroundTimeout
-
+7. AroundConstruct - Gets invoked when the constructor is called.
+8. AroundInvoke - Gets invoked when the method is called.
+9. AroundTimeout - (for ejb timers) - used to intercept time outs of EJB timers along with a way 
+					to obtain an instance of the Timer being intercepted 
+					(via javax.interceptor.InvocationContext.getTimer())
 
 
 Events:   
