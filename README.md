@@ -43,39 +43,40 @@ Scopes:
 
 Interceptors: 
 	
-1. *Interceptor – Cross cutting functionality.
-			Notice that Interceptor is not an annotation, it is just a class,
-				that has method(s) with @AroundConstruct and/or @AroundInvoke
-		
-2. Interceptors – For chaining the one or more interceptors
-3. ExcludeClassInterceptors – Excludes method(s) from the interceptors declared at the class level.
-4. InterceptorBinding – Binds the interceptor class(es) with intercepted class.
-5. Transactional – Provides transactional interception.
-6. Priority – Prioritizes the order of interceptor methods order.
-7. AroundConstruct - Gets invoked when the constructor is called.
-8. AroundInvoke - Gets invoked when the method is called.
-9. AroundTimeout - (for ejb timers) - used to intercept time outs of EJB timers along with a way 
-					to obtain an instance of the Timer being intercepted 
-					(via javax.interceptor.InvocationContext.getTimer())
+	1. Interceptor 			-	Cross-cutting functionality.
+						  Notice that Interceptor is not an annotation, it is a POJO class,
+						  that has method(s) with @AroundConstruct and/or @AroundInvoke 
+	2. Interceptors 		– 	For chaining the one or more interceptors
+	3. ExcludeClassInterceptors 	– 	Excludes method(s) from the interceptors declared at the class level.
+	4. InterceptorBinding 		– 	Binds the interceptor class(es) with intercepted class.
+	5. Transactional 		– 	Provides transactional interception.
+	6. Priority 			– 	Prioritizes the order of interceptor methods order.
+	7. AroundConstruct 		- 	Gets invoked when the constructor is called.
+	8. AroundInvoke 		- 	Gets invoked when the method is called.
+	9. AroundTimeout (for ejb timers)- 	used to intercept time outs of EJB timers along with a way 
+							to obtain an instance of the Timer being intercepted 
+							(via javax.interceptor.InvocationContext.getTimer())
+
+
+Decorators:
+
+	1.Decorator
+	2.Delegate
+
+
+	Interceptor, Decorators must be enabled explicitly in beans.xml file
 
 
 Events:   
 
-1. Event* - Event object
-2. fire - fires the event synchronously.
-3. fireAsync - Fires the event asynchronously.
-4. Observes - Observes the event.
-5. ObservesAsync - Observes the event asynchronously.
-6. WithAnnotations – Applies only to the event parameters.
-7. Priority – Prioritizes the order of event notification.
+	1. Event* - Event object
+	2. fire - fires the event synchronously.
+	3. fireAsync - Fires the event asynchronously.
+	4. Observes - Observes the event.
+	5. ObservesAsync - Observes the event asynchronously.
+	6. WithAnnotations – Applies only to the event parameters.
+	7. Priority – Prioritizes the order of event notification.
 				Priority applies only to events fires synchronously.
 				
 				fire <-> observes
 				fireAsync <-> observesAsync
-
-Decorators:
-1. Decorator
-2. Delegate
-
-
-Interceptor, Decorators must be enabled explicitly in beans.xml file
