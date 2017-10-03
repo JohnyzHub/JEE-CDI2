@@ -49,12 +49,14 @@ Interceptors:
 	2. Interceptors 		– 	For chaining the one or more interceptors
 	3. ExcludeClassInterceptors 	– 	Excludes method(s) from the interceptors declared at the class level.
 	4. InterceptorBinding 		– 	Binds the interceptor class(es) with intercepted class.
-						This needs @Interceptor annotation while applying on intercepted class.
-	5. Transactional 		– 	Provides transactional interception.
-	6. Priority 			– 	Prioritizes the order of interceptor methods order.
-	7. AroundConstruct 		- 	Gets invoked when the constructor is called.
-	8. AroundInvoke 		- 	Gets invoked when the method is called.
-	9. AroundTimeout (for ejb timers)- 	used to intercept time outs of EJB timers along with a way 
+						Notice that this needs @Interceptor annotation while binding 
+						interceptor POJOs(#1 in this list).
+	5. Interceptor			-	This annotation links the InterceptorBinding(#4) to the interceptor(#1)			
+	6. Transactional 		– 	Provides transactional interception.
+	7. Priority 			– 	Prioritizes the order of interceptor methods order.
+	8. AroundConstruct 		- 	Gets invoked when the constructor is called.
+	9. AroundInvoke 		- 	Gets invoked when the method is called.
+	10. AroundTimeout (for ejb timers)- 	used to intercept time outs of EJB timers along with a way 
 							to obtain an instance of the Timer being intercepted 
 							(via javax.interceptor.InvocationContext.getTimer())
 
