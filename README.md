@@ -15,7 +15,7 @@ JEE 7 CDI 2.x Practice Project.
 
 6. Default - This is by implicitly applied by default as qualifier.
 7. Qualifier – To mark the bean with special qualification.
-8. Nonbinding – To mark a field that it is not part of qualifier, while determining bean 				qualification.
+8. Nonbinding – To mark a field that it is not part of qualifier, while determining bean qualification.
 
 
 9. Produces – Produces a bean for non-bean class. 
@@ -43,12 +43,13 @@ Scopes:
 
 Interceptors: 
 	
-	1. Interceptor 			-	Cross-cutting functionality.
-						  Notice that Interceptor is not an annotation, it is a POJO class,
-						  that has method(s) with @AroundConstruct and/or @AroundInvoke 
+	1. Interceptor 			-	Cross-cutting functionality. Notice that it is a POJO class. 
+							It has method(s) with @AroundConstruct and/or @AroundInvoke.
+							This class doesn't need special annotation.
 	2. Interceptors 		– 	For chaining the one or more interceptors
 	3. ExcludeClassInterceptors 	– 	Excludes method(s) from the interceptors declared at the class level.
 	4. InterceptorBinding 		– 	Binds the interceptor class(es) with intercepted class.
+						This needs @Interceptor annotation while applying on intercepted class.
 	5. Transactional 		– 	Provides transactional interception.
 	6. Priority 			– 	Prioritizes the order of interceptor methods order.
 	7. AroundConstruct 		- 	Gets invoked when the constructor is called.
